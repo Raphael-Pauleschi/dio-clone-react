@@ -9,7 +9,7 @@ import {
   Input,
 } from "./styles";
 import Button from "../button";
-import {dioLogo} from '../../assets/logo-dio.png'
+import dioLogo from '../../assets/logo-dio.png'
 
 const Header = () => {
   return (
