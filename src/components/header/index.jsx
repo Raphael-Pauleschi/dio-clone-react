@@ -7,26 +7,37 @@ import {
   Menu,
   MenuRight,
   Input,
+  UserPicture,
 } from "./styles";
 import Button from "../button";
-import dioLogo from '../../assets/logo-dio.png'
+import dioLogo from "../../assets/logo-dio.png";
 
-const Header = () => {
+const Header = ({ autenticado }) => {
   return (
     <Wrapper>
       <Container>
         <Row>
-          <img src={dioLogo} alt="logo da dio"/>
-          <SearchInputContainer>
-          <Input placeholder="Buscar..."/>
-          </SearchInputContainer>
-            <Menu>Live Code</Menu>
-            <Menu>Global</Menu>
+          <img src={dioLogo} alt="logo da dio" />
+          {autenticado ? (
+            <>
+              <SearchInputContainer>
+                <Input placeholder="Buscar..." />
+              </SearchInputContainer>
+              <Menu>Live Code</Menu>
+              <Menu>Global</Menu>
+            </>
+          ) : null}
         </Row>
         <Row>
-          <MenuRight href="#">Home</MenuRight>
-          <Button title="Entrar"/>
-          <Button title="Cadastrar"/>
+          {autenticado ? (
+            <UserPicture src="https://avatars.githubusercontent.com/u/45184516?v=4" />
+          ) : (
+            <>
+              <MenuRight href="#">Home</MenuRight>
+              <Button title="Entrar" />
+              <Button title="Cadastrar" />
+            </>
+          )}
         </Row>
       </Container>
     </Wrapper>
