@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { IconContainer, InputContainer, InputText } from "./styles";
 
-const Input = () => {
+const Input = ({ leftIcon, name, ...rest }) => {
   return (
-    <div>Input</div>
-  )
-}
+    <InputContainer>
+      {leftIcon ? (<IconContainer>{leftIcon}</IconContainer>) : null}
+      <InputText {...rest} />
+    </InputContainer>
+  );
+};
 
-export default Input
+export default Input;
