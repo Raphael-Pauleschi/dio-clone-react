@@ -5,8 +5,8 @@ import banner from "../../assets/banner.png";
 import Button from "../../components/button";
 import { useNavigate } from "react-router-dom";
 
-const home = () => {
-  const navigate = useNavigate;
+const Home = () => {
+  const navigate = useNavigate();
 
   const handleClickSignIn = () => {
     navigate("/login");
@@ -42,4 +42,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

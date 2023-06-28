@@ -30,7 +30,7 @@ const Header = ({ autenticado }) => {
         </Row>
         <Row>
           {autenticado ? (
-            <UserPicture src="https://avatars.githubusercontent.com/u/45184516?v=4" />
+            <UserPicture src="https://avatars.githubusercontent.com/u/84625141" />
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
