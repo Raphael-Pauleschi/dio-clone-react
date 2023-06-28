@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/header";
+import {MdEmail, MdLock} from "react-icons/md";
 import {
   Container,
   Title,
@@ -30,15 +31,15 @@ const login = () => {
             <TitleLogin>Faça o seu cadastro</TitleLogin>
             <SubTitleLogin>Faça seu login e make the change</SubTitleLogin>
             <form>
-              <Input placeholder="E-mail" />
-              <Input placeholder="Senha" type="password" />
-              <Button title="entrar" variant="secondary" />
+              <Input placeholder="E-mail" leftIcon={<MdEmail/>} />
+              <Input placeholder="Senha" type="password" leftIcon={<MdLock/>}/>
+              <Button title="Entrar" variant="secondary" />
             </form>
+            <Row>
+              <ForgotText>Esqueci a minha senha</ForgotText>
+              <CreateText>Criar Conta</CreateText>
+            </Row>
           </Wrapper>
-          <Row>
-            <ForgotText>Esqueci a minha senha</ForgotText>
-            <CreateText>Criar Conta</CreateText>
-          </Row>
         </Column>
       </Container>
     </>
