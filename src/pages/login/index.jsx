@@ -39,7 +39,7 @@ const Login = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -51,7 +51,7 @@ const Login = () => {
         `/users?email=${formData.email}&senha=${formData.senha}`
       );
 
-      if (data.length && data[0].id) {
+      if (data.length=== 1) {
         navigate("/feed");
         return;
       }
