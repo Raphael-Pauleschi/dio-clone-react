@@ -17,13 +17,21 @@ import Input from "../../components/input";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import {yupResolver} from '@hookform/resolvers/yup'
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-const schema = yup.object({
-  email: yup.string().email('email não é valido').required(),
-  password: yup.string().min(3, "no minimo 3 caracteres").required()
-}).required();
+const schema = yup
+  .object({
+    email: yup
+      .string()
+      .email("email não é valido")
+      .required("Campo obrigatório"),
+    password: yup
+      .string()
+      .min(3, "no minimo 3 caracteres")
+      .required("Campo obrigatório"),
+  })
+  .required();
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,10 +39,9 @@ const Login = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema),
-    reValidateMode: "onChange",
     mode: "onChange",
   });
 
@@ -51,13 +58,13 @@ const Login = () => {
 
       alert("Usuário ou senha inválido");
     } catch (e) {
-      // TODO: HANDLE ERROR
+      alert("Houve um erro tente novamente");
     }
   };
 
   const handleClickSignIn = () => {
-    navigate('/feed')
-  }
+    navigate("/feed");
+  };
 
   return (
     <>
@@ -79,19 +86,19 @@ const Login = () => {
                 leftIcon={<MdEmail />}
                 name="email"
                 control={control}
-                errorMessage={errors.email.message}
+                errorMessage={errors?.email?.message}
               />
-              {errors.email && <span>E-mail é obrigatório</span>}
+
               <Input
                 type="password"
                 placeholder="Senha"
                 leftIcon={<MdLock />}
-                name="senha"
+                name="password"
                 control={control}
-                errorMessage={errors.password.message}
+                errorMessage={errors?.password?.message}
               />
-              {errors.senha && <span>Senha é obrigatório</span>}
-              <Button title="Entrar" variant="secondary" type="submit" onClick={()=> handleClickSignIn()}/>
+
+              <Button title="Entrar" variant="secondary" type="submit" />
             </form>
             <Row>
               <ForgotText>Esqueci a minha senha</ForgotText>
