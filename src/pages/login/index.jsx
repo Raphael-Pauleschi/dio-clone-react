@@ -17,6 +17,13 @@ import Input from "../../components/input";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from "yup";
+
+const schema = yup.object({
+  email: yup.string().email('email não é valido').required(),
+  password: yup.string().min(3, "no minimo 3 caracteres").required()
+}).required();
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,6 +33,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    resolver: yupResolver(schema),
     reValidateMode: "onChange",
     mode: "onChange",
   });
@@ -47,7 +55,9 @@ const Login = () => {
     }
   };
 
-  console.log("errors", errors);
+  const handleClickSignIn = () => {
+    navigate('/feed')
+  }
 
   return (
     <>
@@ -69,6 +79,7 @@ const Login = () => {
                 leftIcon={<MdEmail />}
                 name="email"
                 control={control}
+                errorMessage={errors.email.message}
               />
               {errors.email && <span>E-mail é obrigatório</span>}
               <Input
@@ -77,9 +88,10 @@ const Login = () => {
                 leftIcon={<MdLock />}
                 name="senha"
                 control={control}
+                errorMessage={errors.password.message}
               />
               {errors.senha && <span>Senha é obrigatório</span>}
-              <Button title="Entrar" variant="secondary" type="submit" />
+              <Button title="Entrar" variant="secondary" type="submit" onClick={()=> handleClickSignIn()}/>
             </form>
             <Row>
               <ForgotText>Esqueci a minha senha</ForgotText>
