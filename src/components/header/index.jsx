@@ -12,6 +12,7 @@ import {
 import Button from "../button";
 import dioLogo from "../../assets/logo-dio.png";
 
+
 const Header = ({ autenticado }) => {
   return (
     <Wrapper>

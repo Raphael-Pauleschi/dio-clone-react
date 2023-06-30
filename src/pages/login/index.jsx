@@ -48,7 +48,7 @@ const Login = () => {
   const onSubmit = async (formData) => {
     try {
       const { data } = await api.get(
-        `/users?email=${formData.email}&senha=${formData.senha}`
+        `/users?email=${formData.email}&password=${formData.password}`
       );
 
       if (data.length=== 1) {
@@ -102,7 +102,7 @@ const Login = () => {
             </form>
             <Row>
               <ForgotText>Esqueci a minha senha</ForgotText>
-              <CreateText>Criar Conta</CreateText>
+              <CreateText >Criar Conta</CreateText>
             </Row>
           </Wrapper>
         </Column>
