@@ -29,7 +29,7 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: "Open Sans";
+ 
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -41,7 +41,7 @@ export const Title = styled.h2`
 `;
 
 export const TitleLogin = styled.p`
-  font-family: "Open Sans";
+ 
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -50,7 +50,7 @@ export const TitleLogin = styled.p`
 `;
 
 export const SubTitleLogin = styled.p`
-  font-family: "Open Sans";
+ 
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -59,7 +59,7 @@ export const SubTitleLogin = styled.p`
 `;
 
 export const ForgotText = styled.p`
-  font-family: "Open Sans";
+ 
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -69,7 +69,7 @@ export const ForgotText = styled.p`
 `;
 
 export const CreateText = styled.p`
-  font-family: "Open Sans";
+ 
   font-style: normal;
   font-weight: 700;
   font-size: 14px;

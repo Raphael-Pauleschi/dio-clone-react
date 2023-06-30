@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    font-family: "Open Sans";
     background-color: #1E192C;
     color: #FFFFFF;
   }
