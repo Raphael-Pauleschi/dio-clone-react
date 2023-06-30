@@ -11,9 +11,10 @@ import {
 } from "./styles";
 import Button from "../button";
 import dioLogo from "../../assets/logo-dio.png";
-
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ autenticado }) => {
+  const navigate = useNavigate()
   return (
     <Wrapper>
       <Container>
@@ -35,8 +36,8 @@ const Header = ({ autenticado }) => {
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
-              <Button title="Entrar" />
-              <Button title="Cadastrar" />
+              <Button title="Entrar" onClick={() => navigate("/login")}/>
+              <Button title="Cadastrar" onClick={() => navigate("/register")}/>
             </>
           )}
         </Row>
