@@ -3,11 +3,13 @@ import { MdEmail, MdLock, MdOutlinePermIdentity } from "react-icons/md";
 import {
   Container,
   Column,
-  Row,
+  InfoText,
   Title,
   TitleRegister,
   SubTitleRegister,
   Wrapper,
+  LoginText,
+  LonginLink,
 } from "./styles";
 import Header from "../../components/header";
 import { api } from "../../services/api";
@@ -103,8 +105,10 @@ const onSubmit = async (formData) =>{
              control={control}
              errorMessage={errors?.password?.message}
              />
-              <Button title="Cadastrar" variant="secondary" type="submit"/>
+              <Button title="Criar minha conta" variant="secondary" type="submit"/>
             </form>
+            <InfoText>Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os termos de Uso da DIO.</InfoText>
+            <LoginText>Já tenho conta. <LonginLink to="/login">Fazer login</LonginLink></LoginText>
           </Wrapper>
         </Column>
       </Container>

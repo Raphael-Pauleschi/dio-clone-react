@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.main`
@@ -64,16 +65,15 @@ export const ForgotText = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 19px;
-
   color: #e5e044;
 `;
 
-export const CreateText = styled.p`
- 
+export const CreateText = styled(Link)`
+  
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 19px;
-
+  text-decoration: none;
   color: #e230d7;
 `;

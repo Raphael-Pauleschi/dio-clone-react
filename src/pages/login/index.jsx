@@ -102,7 +102,7 @@ const Login = () => {
             </form>
             <Row>
               <ForgotText>Esqueci a minha senha</ForgotText>
-              <CreateText >Criar Conta</CreateText>
+              <CreateText to="/register">Criar Conta</CreateText>
             </Row>
           </Wrapper>
         </Column>
